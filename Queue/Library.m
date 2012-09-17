@@ -10,7 +10,7 @@
 
 @implementation Library
 
-@synthesize managedObjectContext;
+@synthesize managedObjectContext, info;
 
 - (void)syncWithMusicLibrary {
     NSDate *lastModifiedDate = [[MPMediaLibrary defaultMediaLibrary] lastModifiedDate];
@@ -28,8 +28,6 @@
     NSError *error = nil;
     
     NSArray *fetchedObjects = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    
-    Info *info = nil;
     
     if ([fetchedObjects count] == 0) {
         NSLog(@"Info doesn't exists in db; creating one");

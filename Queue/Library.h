@@ -20,6 +20,7 @@
 @interface Library : NSObject
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property Info *info;
 
 - (void) syncWithMusicLibrary;
 
