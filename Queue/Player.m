@@ -15,6 +15,10 @@
 - (Player *) initWithMPController: (MPMusicPlayerController *) controller {
     playerController = controller;
     
+    [[NSNotificationCenter defaultCenter] addObserver: self
+                                          selector: @selector(changePlayingState)
+                                          name: MPMusicPlayerControllerPlaybackStateDidChangeNotification
+                                          object: nil];
     return self;
 }
 
@@ -25,7 +29,15 @@
     playerController.nowPlayingItem = item;
     playerController.repeatMode = MPMusicRepeatModeNone;
     [playerController play];
-
 }
 
+-(void) changePlayingState {
+    
+    if(playerController.playbackState ==  MPMusicPlaybackStateStopped) {
+        
+        NSLog(@"End of current song or something");
+        
+    }
+
+}
 @end

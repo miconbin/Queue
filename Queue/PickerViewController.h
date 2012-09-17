@@ -20,6 +20,8 @@
     
     __unsafe_unretained IBOutlet UISearchBar *searchBar;
     UIActivityIndicatorView *searchBarSpinner;
+    
+    Queue *queue;
 }
 
 @property (nonatomic,retain) IBOutlet UITableView *tableView;

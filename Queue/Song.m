@@ -2,25 +2,31 @@
 //  Song.m
 //  Queue
 //
-//  Created by biLLy on 9/8/12.
+//  Created by biLLy on 9/17/12.
 //  Copyright (c) 2012 biLLy. All rights reserved.
 //
 
 #import "Song.h"
+#import "Album.h"
+#import "Artist.h"
+#import "Queue.h"
 
 
 @implementation Song
 
 @dynamic id;
 @dynamic name;
+@dynamic position_in_queue;
 @dynamic album;
 @dynamic artist;
+@dynamic queue;
 
-- (MPMediaItem *) getItem {    
+
+- (MPMediaItem *) getItem {
     MPMediaQuery *songQuery= [MPMediaQuery songsQuery];
     
     [songQuery addFilterPredicate: [MPMediaPropertyPredicate predicateWithValue:self.id forProperty:MPMediaItemPropertyPersistentID]];
-        
+    
     if ([songQuery.items count] > 0) {
         return [songQuery.items objectAtIndex: 0];
         

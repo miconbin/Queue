@@ -12,7 +12,10 @@
 #import "Info.h"
 #import "Artist.h"
 #import "Album.h"
+#import "Queue.h"
 #import "Song.h"
+
+@class QueueItem;
 
 @interface Library : NSObject
 
@@ -30,6 +33,9 @@
 - (NSArray *) getSongsWithPredicate: (NSPredicate *)predicate;
 - (NSArray *) getSongsFromAlbum: (Album *)album;
 - (NSArray *) getSongsFromAlbum: (Album *)album withPredicate: (NSPredicate *)predicate;
+
+- (Queue *)getQueue;
+- (QueueItem *)createNewQueueItemWithSong: (Song *)song;
 
 - (void) save;
 

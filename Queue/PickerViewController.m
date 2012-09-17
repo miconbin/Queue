@@ -62,6 +62,9 @@
     
     NSLog(@"Spinner added");
     
+    // Set queue instance
+    queue = [library getQueue];
+    
 }
 
 - (void)viewDidUnload
@@ -126,6 +129,8 @@
     
     Song *selected = [[songs objectAtIndex: indexPath.section] objectAtIndex: indexPath.row];
     
+    [queue pushSong: selected];
+    [library save];
     
     [delegate.player playItem: [selected getItem]];
     

@@ -200,5 +200,41 @@
     [managedObjectContext save:nil];
 }
 
+-(Queue *) getQueue {
+    static Queue *queue = nil;
+    
+    if(queue == nil) {
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+        
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"QueueItem"
+                                                  inManagedObjectContext:managedObjectContext];
+        
+        [fetchRequest setEntity:entity];
+        [fetchRequest setPredicate: [NSPredicate predicateWithFormat:@"previous = nil"]];
+        
+        NSArray *fetchedObjects = [managedObjectContext executeFetchRequest:fetchRequest error:nil];
+        
+        if ([fetchedObjects count] == 0) {
+            NSLog(@"There isnt any QueueItem; Queue will be empty");
+        }
+    
+        queue = [[Queue alloc] initWithFirstItem: fetchedObjects.count ? [fetchedObjects objectAtIndex: 0] : nil];
+        
+        queue.library = self;
+    }
+    
+    return queue;
+}
+
+- (QueueItem *)createNewQueueItemWithSong: (Song *)song {
+    QueueItem *item =[NSEntityDescription
+                        insertNewObjectForEntityForName:@"QueueItem"
+                        inManagedObjectContext: managedObjectContext];
+    
+    item.song = song;
+    
+    return item;
+}
+
 
 @end

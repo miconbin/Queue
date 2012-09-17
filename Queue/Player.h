@@ -20,4 +20,6 @@
 - (Player *) initWithMPController: (MPMusicPlayerController *) controller;
 - (void) playItem: (MPMediaItem *)item;
 
+-(void) changePlayingState;
+
 @end

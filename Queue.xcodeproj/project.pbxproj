@@ -19,6 +19,9 @@
 		28780E3B15FBC54E00906DB1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28780E3A15FBC54E00906DB1 /* ViewController.m */; };
 		28780E3E15FBC54E00906DB1 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28780E3C15FBC54E00906DB1 /* ViewController.xib */; };
 		287ABE53160251C90030EA15 /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 287ABE52160251C90030EA15 /* Album.m */; };
+		28925AFF160782B5005D4EC9 /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 28925AFE160782B5005D4EC9 /* Song.m */; };
+		28925B0216079911005D4EC9 /* Queue.m in Sources */ = {isa = PBXBuildFile; fileRef = 28925B0116079911005D4EC9 /* Queue.m */; };
+		28925B05160799B4005D4EC9 /* QueueItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 28925B04160799B4005D4EC9 /* QueueItem.m */; };
 		28B3E5B71602249E0078C3C5 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B3E5B61602249E0078C3C5 /* Player.m */; };
 		28B6B9FF15FBD4EC00082760 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 28B6B9FE15FBD4EC00082760 /* icon.png */; };
 		28B6BA0315FBD52100082760 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 28B6BA0215FBD52100082760 /* icon.png */; };
@@ -30,7 +33,6 @@
 		28B6BA1415FBD91E00082760 /* MusicLibrary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 28B6BA1215FBD91E00082760 /* MusicLibrary.xcdatamodeld */; };
 		28B6BA6515FBEF3A00082760 /* Library.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B6BA6415FBEF3A00082760 /* Library.m */; };
 		28B6BA6815FBF33F00082760 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28B6BA6715FBF33E00082760 /* CoreData.framework */; };
-		28B6BA6B15FBFB4E00082760 /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B6BA6A15FBFB4E00082760 /* Song.m */; };
 		28B6BA6D15FBFF2B00082760 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28B6BA6C15FBFF2B00082760 /* MediaPlayer.framework */; };
 		28B6BA7015FC02E400082760 /* Info.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B6BA6F15FC02E400082760 /* Info.m */; };
 /* End PBXBuildFile section */
@@ -58,6 +60,12 @@
 		28780E4515FBC54E00906DB1 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		287ABE51160251C90030EA15 /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
 		287ABE52160251C90030EA15 /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
+		28925AFD160782B5005D4EC9 /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
+		28925AFE160782B5005D4EC9 /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
+		28925B0016079911005D4EC9 /* Queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Queue.h; sourceTree = "<group>"; };
+		28925B0116079911005D4EC9 /* Queue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Queue.m; sourceTree = "<group>"; };
+		28925B03160799B4005D4EC9 /* QueueItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueueItem.h; sourceTree = "<group>"; };
+		28925B04160799B4005D4EC9 /* QueueItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueueItem.m; sourceTree = "<group>"; };
 		28B3B15815FBC7D800926ADD /* Queue.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Queue.entitlements; sourceTree = "<group>"; };
 		28B3E5B51602249E0078C3C5 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		28B3E5B61602249E0078C3C5 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
@@ -72,8 +80,6 @@
 		28B6BA6315FBEF3A00082760 /* Library.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Library.h; sourceTree = "<group>"; };
 		28B6BA6415FBEF3A00082760 /* Library.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Library.m; sourceTree = "<group>"; };
 		28B6BA6715FBF33E00082760 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		28B6BA6915FBFB4E00082760 /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
-		28B6BA6A15FBFB4E00082760 /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
 		28B6BA6C15FBFF2B00082760 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		28B6BA6E15FC02E400082760 /* Info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Info.h; sourceTree = "<group>"; };
 		28B6BA6F15FC02E400082760 /* Info.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Info.m; sourceTree = "<group>"; };
@@ -99,14 +105,16 @@
 			isa = PBXGroup;
 			children = (
 				28B6BA1215FBD91E00082760 /* MusicLibrary.xcdatamodeld */,
+				28925B03160799B4005D4EC9 /* QueueItem.h */,
+				28925B04160799B4005D4EC9 /* QueueItem.m */,
+				28925AFD160782B5005D4EC9 /* Song.h */,
+				28925AFE160782B5005D4EC9 /* Song.m */,
 				287ABE51160251C90030EA15 /* Album.h */,
 				287ABE52160251C90030EA15 /* Album.m */,
 				28B6BA6E15FC02E400082760 /* Info.h */,
 				28B6BA6F15FC02E400082760 /* Info.m */,
 				2842719D15FCC4EC007FADF3 /* Artist.h */,
 				2842719E15FCC4EC007FADF3 /* Artist.m */,
-				28B6BA6915FBFB4E00082760 /* Song.h */,
-				28B6BA6A15FBFB4E00082760 /* Song.m */,
 				28B6BA6315FBEF3A00082760 /* Library.h */,
 				28B6BA6415FBEF3A00082760 /* Library.m */,
 			);
@@ -148,6 +156,8 @@
 			children = (
 				28B3B15815FBC7D800926ADD /* Queue.entitlements */,
 				2819A07015FCECA700E508E6 /* Database */,
+				28925B0016079911005D4EC9 /* Queue.h */,
+				28925B0116079911005D4EC9 /* Queue.m */,
 				28B3E5B51602249E0078C3C5 /* Player.h */,
 				28B3E5B61602249E0078C3C5 /* Player.m */,
 				28780E3615FBC54E00906DB1 /* AppDelegate.h */,
@@ -266,12 +276,14 @@
 				28B6BA1415FBD91E00082760 /* MusicLibrary.xcdatamodeld in Sources */,
 				28B6BA6515FBEF3A00082760 /* Library.m in Sources */,
 				2819A06F15FCE82600E508E6 /* PickerCell.m in Sources */,
-				28B6BA6B15FBFB4E00082760 /* Song.m in Sources */,
 				28B6BA7015FC02E400082760 /* Info.m in Sources */,
 				2842719F15FCC4EC007FADF3 /* Artist.m in Sources */,
 				284271A715FCD29A007FADF3 /* PickerViewController.m in Sources */,
 				28B3E5B71602249E0078C3C5 /* Player.m in Sources */,
 				287ABE53160251C90030EA15 /* Album.m in Sources */,
+				28925AFF160782B5005D4EC9 /* Song.m in Sources */,
+				28925B0216079911005D4EC9 /* Queue.m in Sources */,
+				28925B05160799B4005D4EC9 /* QueueItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
