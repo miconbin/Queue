@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+#import "Library.h"
+#import "PickerViewController.h"
+
+@interface ViewController : UIViewController <UITabBarDelegate, UITableViewDataSource>
+
+@property Library *library;
+@property (strong, nonatomic) IBOutlet PickerViewController *picker;
 
 @end

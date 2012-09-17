@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1487" systemVersion="11E53" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Album" representedClassName="Album" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="artist" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Artist" syncable="YES"/>
+        <relationship name="songs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Song" inverseName="album" inverseEntity="Song" syncable="YES"/>
+    </entity>
+    <entity name="Artist" representedClassName="Artist" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Info" representedClassName="Info" syncable="YES">
+        <attribute name="adas" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="last_update" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <entity name="Queue" syncable="YES">
+        <relationship name="list" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Song" inverseName="queue" inverseEntity="Song" syncable="YES"/>
+        <relationship name="playing" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Song" inverseName="queue" inverseEntity="Song" syncable="YES"/>
+    </entity>
+    <entity name="Setting" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="still_in_library" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Song" representedClassName="Song" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="album" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Album" inverseName="songs" inverseEntity="Album" syncable="YES"/>
+        <relationship name="artist" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Artist" syncable="YES"/>
+        <relationship name="queue" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Queue" inverseName="playing" inverseEntity="Queue" syncable="YES"/>
+        <fetchedProperty name="fetchedProperty" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="Song"/>
+        </fetchedProperty>
+    </entity>
+    <elements>
+        <element name="Album" positionX="0" positionY="0" width="128" height="105"/>
+        <element name="Artist" positionX="0" positionY="0" width="128" height="75"/>
+        <element name="Info" positionX="0" positionY="0" width="128" height="75"/>
+        <element name="Setting" positionX="0" positionY="0" width="128" height="105"/>
+        <element name="Song" positionX="0" positionY="0" width="128" height="149"/>
+        <element name="Queue" positionX="160" positionY="192" width="128" height="75"/>
+    </elements>
+</model>
