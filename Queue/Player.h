@@ -10,15 +10,20 @@
 
 #import "Library.h"
 
-@interface Player : NSObject
+@interface Player : NSObject {
+    Queue *queue;
+    
+    bool myFould;
+}
 
 @property Library *library;
 @property Song *currentPlaying;
 @property MPMusicPlayerController * playerController;
 
-
-- (Player *) initWithMPController: (MPMusicPlayerController *) controller;
+- (Player *) initWithMPController: (MPMusicPlayerController *) controller withQueue: (Queue *)queue;
 - (void) playItem: (MPMediaItem *)item;
+- (void) playNext;
+- (void) play;
 
 -(void) changePlayingState;
 

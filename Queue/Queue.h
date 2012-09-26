@@ -25,6 +25,7 @@
 - (void) pushSongAsNext: (Song*)song;
 
 - (Song *) getNextSong;
+- (Song *)pop;
 - (Song *) getSongAtIndex: (NSInteger *)index;
 
 @end

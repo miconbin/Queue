@@ -132,7 +132,7 @@
     [queue pushSong: selected];
     [library save];
     
-    [delegate.player playItem: [selected getItem]];
+    [delegate.player play];
     
 }
 

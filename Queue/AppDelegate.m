@@ -24,7 +24,7 @@
     [self.library syncWithMusicLibrary];
     self.viewController.library = self.library;
     
-    Player *player = [[Player alloc] initWithMPController: [MPMusicPlayerController iPodMusicPlayer]];
+    Player *player = [[Player alloc] initWithMPController: [MPMusicPlayerController iPodMusicPlayer] withQueue: [self.library getQueue]];
     self.player = player;
     
     if([self.window respondsToSelector:@selector(rootViewController)]) {

@@ -37,6 +37,7 @@
 
 - (Queue *)getQueue;
 - (QueueItem *)createNewQueueItemWithSong: (Song *)song;
+- (void)removeQueueItem: (QueueItem *)item;
 
 - (void) save;
 

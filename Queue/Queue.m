@@ -10,6 +10,8 @@
 
 @implementation Queue
 
+@synthesize library;
+
 - (Queue *) initWithFirstItem: (QueueItem *)item {
     queue = [[NSMutableArray alloc] init];
     
@@ -34,5 +36,16 @@
     [queue addObject: item];       
 }
 
+- (Song *)pop {
+    if(!queue.count) return nil;
+    
+    QueueItem *item = [queue objectAtIndex: 0];
+    Song *song = item.song;
+    
+    [queue removeObject: item];
+    [library removeQueueItem: item];
+    
+    return song;
+}
 
 @end

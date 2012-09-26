@@ -234,5 +234,8 @@
     return item;
 }
 
+- (void)removeQueueItem: (QueueItem *)item {
+    [managedObjectContext deleteObject: item];
+}
 
 @end
