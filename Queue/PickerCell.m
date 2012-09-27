@@ -57,8 +57,6 @@
     
     labelsWidth = 300;
     
-    //[self.contentView addSubview: artistLabelHighlihted];
-    //[self.contentView addSubview: artistLabel];
     
     
     starsFilled = [[UILabel alloc] initWithFrame:CGRectMake(10, 21.5, 100, 18)];
@@ -93,7 +91,11 @@
     [self.contentView addSubview: detailsLabel];
     [self.contentView addSubview: detailsLabelHighlihted];
     
+    [self.contentView addSubview: titleLabelHighlihted];
+    [self.contentView addSubview: titleLabel];
     
+    [self.contentView addSubview: artistLabelHighlihted];
+    [self.contentView addSubview: artistLabel];
     
     artistLabelHighlihted.alpha = 0;
     titleLabelHighlihted.alpha = 0;
@@ -102,8 +104,6 @@
     detailsLabelHighlihted.alpha = 0;
     
     
-    [self.contentView addSubview: titleLabelHighlihted];
-    [self.contentView addSubview: titleLabel];
 }
 
 

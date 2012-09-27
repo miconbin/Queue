@@ -16,7 +16,7 @@
 
 @dynamic id;
 @dynamic name;
-@dynamic position_in_queue;
+@dynamic queue_pos;
 @dynamic album;
 @dynamic artist;
 @dynamic queue;

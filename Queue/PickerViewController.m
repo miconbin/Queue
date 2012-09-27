@@ -115,7 +115,8 @@
     
     Song *song = [[songs objectAtIndex: indexPath.section] objectAtIndex: indexPath.row];
     
-    [cell updateLabelsWithTitle: [song name]];
+    [cell updateLabelsWithIndexPath: indexPath titled: song.name ofArtist: song.artist.name rated: 5 selected: song.queue_pos != nil];
+    //[cell updateLabelsWithTitle: [song name]];
     //cell.textLabel.text = [[songs objectAtIndex: indexPath.row] name];
     
     return cell;
@@ -141,7 +142,11 @@
 }
 
 - (void)swipeCell:(NSIndexPath *)indexPath onCell: (PickerCell *)cell {
+    Song *selected = [[songs objectAtIndex: indexPath.section] objectAtIndex: indexPath.row];
     
+    [cell setSelection: true withAnimations: true];
+    
+    [queue pushSongAsNext: selected];
 }
 
 // searchBar

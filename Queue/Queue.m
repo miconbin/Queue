@@ -36,6 +36,16 @@
     [queue addObject: item];       
 }
 
+- (void) pushSongAsNext: (Song*)song {
+    QueueItem *item = [self.library createNewQueueItemWithSong: song];
+    
+    QueueItem *next = [queue objectAtIndex: 0];
+    
+    next.previous = item;
+    
+    [queue insertObject: item atIndex:0];
+}
+
 - (Song *)pop {
     if(!queue.count) return nil;
     

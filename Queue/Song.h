@@ -11,7 +11,7 @@
 
 #import "Library.h"
 
-@class Album, Artist, Queue;
+@class Album, Artist, Queue, QueueItem;
 
 @interface Song : NSManagedObject
 
@@ -21,6 +21,7 @@
 @property (nonatomic, retain) Album *album;
 @property (nonatomic, retain) Artist *artist;
 @property (nonatomic, retain) Queue *queue;
+@property (nonatomic, retain) QueueItem *queue_pos;
 
 - (MPMediaItem *) getItem;
 
