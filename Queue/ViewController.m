@@ -16,6 +16,8 @@
 
 @synthesize library;
 @synthesize picker;
+@synthesize libraryView;
+@synthesize playerView;
 
 - (void)viewDidLoad
 {
@@ -31,6 +33,8 @@
 {
     [library save];
     [self setPicker:nil];
+    [self setLibraryView:nil];
+    [self setPlayerView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -45,6 +49,19 @@
     NSLog(@"Select item of id %d", item.tag);
     
     
+    currentView.hidden = YES;
+    
+    
+    if(item.tag == 0) { // player
+        
+        currentView = playerView;
+    }
+    
+    if(item.tag == 2) { // library
+        currentView = libraryView;
+    }
+    
+    currentView.hidden = NO;
 }
 
 

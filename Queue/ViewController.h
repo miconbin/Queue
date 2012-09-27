@@ -11,9 +11,13 @@
 #import "Library.h"
 #import "PickerViewController.h"
 
-@interface ViewController : UIViewController <UITabBarDelegate, UITableViewDataSource>
+@interface ViewController : UIViewController <UITabBarDelegate, UITableViewDataSource> {
+    UIView *currentView;
+}
 
 @property Library *library;
 @property (strong, nonatomic) IBOutlet PickerViewController *picker;
+@property (unsafe_unretained, nonatomic) IBOutlet UITableView *libraryView;
+@property (unsafe_unretained, nonatomic) IBOutlet UIView *playerView;
 
 @end
