@@ -33,7 +33,7 @@
     
     [playerController setQueueWithItemCollection: collection];
     playerController.nowPlayingItem = item;
-    playerController.repeatMode = MPMusicRepeatModeOne;
+    playerController.repeatMode = MPMusicRepeatModeNone;
     [playerController play];
 }
 
