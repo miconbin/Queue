@@ -50,8 +50,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "152"
          endingLineNumber = "152"
-         landmarkName = "-searchBar:textDidChange:"
-         landmarkType = "5">
+         landmarkName = "@implementation PickerViewController"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
