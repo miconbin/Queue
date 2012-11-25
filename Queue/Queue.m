@@ -58,6 +58,43 @@
     [queue insertObject: item atIndex:0];
     [notifyCenter postNotificationName: @"queueChange" object:nil];
 }
+- (void) moveFrom: (int)from to: (int)to {
+    QueueItem *item = [queue objectAtIndex: from];
+    
+    QueueItem *next = item.next;
+    QueueItem *previous = item.previous;
+    
+    item.next = nil;
+    item.previous = nil;
+    
+    if(previous != nil) previous.next = next;
+    if(next != nil) next.previous = previous;
+    
+    next = [queue objectAtIndex: to];
+    previous = next.previous;
+    
+    NSLog(@"Move to song: %@ from: %i to: %i", next.song.name, from, to);
+    
+    if(from > to) {
+        
+        item.previous = next.previous;
+        item.next = next;
+    } else {
+        NSLog(@"Move down");
+        item.next = next.next;
+        next.next = item;
+        item.previous = next;
+        
+    }
+    
+    NSLog(@"After replaced is : %@", next.next.song.name);
+    
+    [library save];
+    
+    [queue removeObjectAtIndex: from];
+    [queue insertObject: item atIndex: to];
+    
+}
 
 - (Song *)pop {
     if(!queue.count) return nil;
@@ -65,8 +102,11 @@
     QueueItem *item = [queue objectAtIndex: 0];
     Song *song = item.song;
     
+    item.next.previous = item.previous;
+    
     [queue removeObject: item];
     [library removeQueueItem: item];
+    
     
     [notifyCenter postNotificationName: @"queueChange" object:nil];
     [notifyCenter postNotificationName: @"songPop" object:nil];
@@ -79,6 +119,9 @@
     return [queue count];
 }
 
+- (Song *) getSongAtIndex: (NSInteger)index {
+    return ((QueueItem *)[queue objectAtIndex: index]).song;
+}
 
 // Events
 

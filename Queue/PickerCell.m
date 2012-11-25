@@ -15,7 +15,7 @@
 
 @synthesize titleLabel, artistLabel, labelsWidth, titleLabelHighlihted, artistLabelHighlihted, starsFilledHighlighted, starsFilled, detailsLabel, detailsLabelHighlihted; // TODO: clean it!
 
-@synthesize delegateView, delegateIndexPath;
+@synthesize delegateView, delegateIndexPath, customBackground;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -39,11 +39,17 @@
 @synthesize speakerView;
 
 - (void)prepareLabels { // TODO: clean
-
+    
+    UIColor *invisible = [UIColor colorWithRed:158 green:195 blue:223 alpha:0];
+    
+    customBackground = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    customBackground.backgroundColor = invisible;
+    
     titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 8, 250, 14)];
     titleLabelHighlihted =  [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 250, 14)];
     titleLabelHighlihted.alpha = 0;
     titleLabelHighlihted.textColor = [UIColor whiteColor];
+    titleLabel.backgroundColor = invisible;
     
     titleLabel.font = titleLabelHighlihted.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size: 14.0];
     
@@ -54,6 +60,7 @@
     
     artistLabel.font = artistLabelHighlihted.font = [UIFont fontWithName:@"HelveticaNeue" size: 12.0];
     artistLabel.textColor = [UIColor colorWithHue: 0 saturation:0 brightness:0.6 alpha:1];
+    artistLabel.backgroundColor = invisible;
     
     labelsWidth = 300;
     
@@ -63,6 +70,7 @@
     starsFilled.font = [UIFont fontWithName:@"Helvetica" size: 13.0];
     starsFilled.textColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
     starsFilled.text = @"★★★★☆";
+    starsFilled.backgroundColor = invisible;
     
     
     starsFilledHighlighted = [[UILabel alloc] initWithFrame:CGRectMake(10, 23, 100, 18)];
@@ -70,6 +78,7 @@
     starsFilledHighlighted.textColor = [UIColor colorWithRed:255 green:255 blue:255 alpha:1];
     starsFilledHighlighted.alpha = 0;
     
+    [self.contentView addSubview: customBackground];
     [self.contentView addSubview: starsFilled];
     [self.contentView addSubview: starsFilledHighlighted];
     
@@ -78,13 +87,12 @@
     detailsLabel.font  = [UIFont fontWithName:@"Helvetica" size: 10.0];
     detailsLabel.textColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.3];
     detailsLabel.text = @"195 plays | 60% bored";
+    detailsLabel.backgroundColor = invisible;
     
     detailsLabelHighlihted = [[UILabel alloc] initWithFrame:detailsLabel.frame];
     detailsLabelHighlihted.textColor = [UIColor colorWithRed:152 green:152 blue:223 alpha:1];
     detailsLabelHighlihted.alpha = 0;
     detailsLabelHighlihted.font = [UIFont fontWithName:@"Helvetica" size: 10.0];
-    
-   // ALog(@"Background %@", detailsLabelHighlihted.backgroundColor);
     
     detailsLabelHighlihted.backgroundColor = [UIColor clearColor]; // TODO: repeat!
     
@@ -149,6 +157,16 @@
     
     starsFilled.text = starsString;
     */
+    
+    titleLabelHighlihted.frame = titleLabel.frame;
+    titleLabelHighlihted.text = titleLabel.text;
+    
+    artistLabelHighlihted.frame = artistLabel.frame;
+    artistLabelHighlihted.text = artistLabel.text;
+    
+    starsFilledHighlighted.text = starsFilled.text; //@"★★★★☆"
+    
+    detailsLabelHighlihted.text = detailsLabel.text;
     
     [self setSelection:selected withAnimations:NO];
         
@@ -257,19 +275,6 @@
     if(self.selected == selected) return;
     
     [super setSelected: selected animated: anims];
-    
-    // Update highlight
-    if(selected) {
-        titleLabelHighlihted.frame = titleLabel.frame;
-        titleLabelHighlihted.text = titleLabel.text;
-        
-        artistLabelHighlihted.frame = artistLabel.frame;
-        artistLabelHighlihted.text = artistLabel.text;
-        
-        starsFilledHighlighted.text = starsFilled.text; //@"★★★★☆"
-        
-        detailsLabelHighlihted.text = detailsLabel.text;
-    }
     
     if(anims) {
         [UIView beginAnimations:nil context:NULL];

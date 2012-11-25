@@ -30,7 +30,7 @@
 
 @property UIImageView *imageView, *imageViewLight;
 @property UILabel *titleLabel, *artistLabel, *detailsLabel;
-@property UIView  *speakerView, *nextSongIcon;
+@property UIView  *speakerView, *nextSongIcon, *customBackground;
 @property UILabel *titleLabelHighlihted, *artistLabelHighlihted, *detailsLabelHighlihted, *speakerViewHighlihted, *nextSongIconHighlihted;
 @property UILabel *starsFilled, *starsFilledHighlighted;
 @property CGFloat labelsWidth;

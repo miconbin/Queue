@@ -23,9 +23,10 @@
 
 - (void) pushSong: (Song*)song;
 - (void) pushSongAsNext: (Song*)song;
+- (void) moveFrom: (int)from to: (int)to;
 
 - (Song *) getNextSong;
-- (Song *) getSongAtIndex: (NSInteger *)index;
+- (Song *) getSongAtIndex: (NSInteger)index;
 - (int) countQueue;
 
 - (Song *) pop;

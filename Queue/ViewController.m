@@ -14,9 +14,11 @@
 }
 
 @synthesize library;
+@synthesize queueTableController;
 @synthesize picker;
 @synthesize libraryView;
 @synthesize playerView;
+@synthesize queueView;
 @synthesize tabBar;
 @synthesize mainView;
 @synthesize queueTabbarItem;
@@ -35,6 +37,10 @@
     queue = [library getQueue];
     
     [queue onQueueChange:self execute:@selector(queueChanged)];
+    
+    [queueTableController setQueue: queue];
+    
+    [self queueChanged];
     
     // loading
     
@@ -90,6 +96,7 @@
         NSLog(@"done sync");
         
         [picker updateTable];
+        [queueTableController.tableView reloadData];
     }
 }
 
@@ -101,6 +108,8 @@
     [self setPlayerView:nil];
     [self setTabBar:nil];
     [self setMainView:nil];
+    [self setQueueTableController:nil];
+    [self setQueueView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -121,6 +130,10 @@
     if(item.tag == 0) { // player
         
         currentView = playerView;
+    }
+    
+    if(item.tag == 1) { // queue
+        currentView = queueView;
     }
     
     if(item.tag == 2) { // library

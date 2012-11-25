@@ -10,6 +10,7 @@
 		2819A06F15FCE82600E508E6 /* PickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2819A06D15FCE75F00E508E6 /* PickerCell.m */; };
 		2842719F15FCC4EC007FADF3 /* Artist.m in Sources */ = {isa = PBXBuildFile; fileRef = 2842719E15FCC4EC007FADF3 /* Artist.m */; };
 		284271A715FCD29A007FADF3 /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 284271A615FCD29A007FADF3 /* PickerViewController.m */; };
+		286E85FB1662560C00055E95 /* queue-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 286E85FA1662560C00055E95 /* queue-bg.png */; };
 		28780E2815FBC54E00906DB1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28780E2715FBC54E00906DB1 /* UIKit.framework */; };
 		28780E2A15FBC54E00906DB1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28780E2915FBC54E00906DB1 /* Foundation.framework */; };
 		28780E2C15FBC54E00906DB1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28780E2B15FBC54E00906DB1 /* CoreGraphics.framework */; };
@@ -27,6 +28,9 @@
 		2898B3E3166187D800F3B6E5 /* queueBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2898B3E0166187D800F3B6E5 /* queueBg.png */; };
 		2898B3E61661883600F3B6E5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2898B3E51661883600F3B6E5 /* Default.png */; };
 		2898B3E8166194A400F3B6E5 /* main-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2898B3E7166194A400F3B6E5 /* main-bg.png */; };
+		28A2185216623E3F0018E4FA /* QueueTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A2185116623E3E0018E4FA /* QueueTableViewController.m */; };
+		28A2185416624E170018E4FA /* queue-cell-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 28A2185316624E170018E4FA /* queue-cell-bg.png */; };
+		28A2185716624F500018E4FA /* QueueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A2185616624F500018E4FA /* QueueCell.m */; };
 		28B3E5B71602249E0078C3C5 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B3E5B61602249E0078C3C5 /* Player.m */; };
 		28B6B9FF15FBD4EC00082760 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 28B6B9FE15FBD4EC00082760 /* icon.png */; };
 		28B6BA0315FBD52100082760 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 28B6BA0215FBD52100082760 /* icon.png */; };
@@ -49,6 +53,7 @@
 		2842719E15FCC4EC007FADF3 /* Artist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Artist.m; sourceTree = "<group>"; };
 		284271A515FCD29A007FADF3 /* PickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerViewController.h; sourceTree = "<group>"; };
 		284271A615FCD29A007FADF3 /* PickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerViewController.m; sourceTree = "<group>"; };
+		286E85FA1662560C00055E95 /* queue-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "queue-bg.png"; path = "Resources/queue-bg.png"; sourceTree = "<group>"; };
 		28780E2315FBC54E00906DB1 /* Queue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Queue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28780E2715FBC54E00906DB1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		28780E2915FBC54E00906DB1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -76,6 +81,11 @@
 		2898B3E0166187D800F3B6E5 /* queueBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = queueBg.png; sourceTree = "<group>"; };
 		2898B3E51661883600F3B6E5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		2898B3E7166194A400F3B6E5 /* main-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "main-bg.png"; path = "Resources/main-bg.png"; sourceTree = "<group>"; };
+		28A2185016623E3E0018E4FA /* QueueTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueueTableViewController.h; sourceTree = "<group>"; };
+		28A2185116623E3E0018E4FA /* QueueTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueueTableViewController.m; sourceTree = "<group>"; };
+		28A2185316624E170018E4FA /* queue-cell-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "queue-cell-bg.png"; path = "Resources/queue-cell-bg.png"; sourceTree = "<group>"; };
+		28A2185516624F500018E4FA /* QueueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueueCell.h; sourceTree = "<group>"; };
+		28A2185616624F500018E4FA /* QueueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueueCell.m; sourceTree = "<group>"; };
 		28B3B15815FBC7D800926ADD /* Queue.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Queue.entitlements; sourceTree = "<group>"; };
 		28B3E5B51602249E0078C3C5 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		28B3E5B61602249E0078C3C5 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
@@ -179,6 +189,10 @@
 				2819A06D15FCE75F00E508E6 /* PickerCell.m */,
 				284271A515FCD29A007FADF3 /* PickerViewController.h */,
 				284271A615FCD29A007FADF3 /* PickerViewController.m */,
+				28A2185516624F500018E4FA /* QueueCell.h */,
+				28A2185616624F500018E4FA /* QueueCell.m */,
+				28A2185016623E3E0018E4FA /* QueueTableViewController.h */,
+				28A2185116623E3E0018E4FA /* QueueTableViewController.m */,
 				28780E3C15FBC54E00906DB1 /* ViewController.xib */,
 				28B6BA0215FBD52100082760 /* icon.png */,
 				28B6BA0115FBD4F600082760 /* Resources */,
@@ -201,6 +215,8 @@
 		28B6BA0115FBD4F600082760 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				286E85FA1662560C00055E95 /* queue-bg.png */,
+				28A2185316624E170018E4FA /* queue-cell-bg.png */,
 				2898B3E7166194A400F3B6E5 /* main-bg.png */,
 				2898B3DE166187D800F3B6E5 /* defaultArtwork.png */,
 				2898B3DF166187D800F3B6E5 /* playNowTrachInfo.png */,
@@ -280,6 +296,8 @@
 				2898B3E3166187D800F3B6E5 /* queueBg.png in Resources */,
 				2898B3E61661883600F3B6E5 /* Default.png in Resources */,
 				2898B3E8166194A400F3B6E5 /* main-bg.png in Resources */,
+				28A2185416624E170018E4FA /* queue-cell-bg.png in Resources */,
+				286E85FB1662560C00055E95 /* queue-bg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +322,8 @@
 				28925AFF160782B5005D4EC9 /* Song.m in Sources */,
 				28925B0216079911005D4EC9 /* Queue.m in Sources */,
 				28925B05160799B4005D4EC9 /* QueueItem.m in Sources */,
+				28A2185216623E3F0018E4FA /* QueueTableViewController.m in Sources */,
+				28A2185716624F500018E4FA /* QueueCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
