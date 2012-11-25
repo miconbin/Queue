@@ -8,11 +8,10 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
-
-@end
-
-@implementation ViewController
+@implementation ViewController {
+    
+    Queue *queue;
+}
 
 @synthesize library;
 @synthesize picker;
@@ -20,6 +19,7 @@
 @synthesize playerView;
 @synthesize tabBar;
 @synthesize mainView;
+@synthesize queueTabbarItem;
 
 - (void)viewDidLoad
 {
@@ -30,6 +30,11 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    
+    // Queue badge
+    queue = [library getQueue];
+    
+    [queue onQueueChange:self execute:@selector(queueChanged)];
     
     // loading
     
@@ -154,6 +159,16 @@
     return cell;
 }
 
+- (void)queueChanged {
+    int count = [queue countQueue];
+    
+    
+    if(count == 0) 
+        queueTabbarItem.badgeValue = nil;
+        
+    else
+        queueTabbarItem.badgeValue = [NSString stringWithFormat:@"%i", count];
+}
 
 
 @end

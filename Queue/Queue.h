@@ -26,8 +26,11 @@
 
 - (Song *) getNextSong;
 - (Song *) getSongAtIndex: (NSInteger *)index;
+- (int) countQueue;
 
 - (Song *) pop;
 - (void) kickSong: (Song *)song;
+
+- (void) onQueueChange: (id)object execute: (SEL)selector;
 
 @end

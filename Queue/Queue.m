@@ -8,12 +8,17 @@
 
 #import "Queue.h"
 
-@implementation Queue
+@implementation Queue {
+    NSNotificationCenter *notifyCenter;
+}
 
 @synthesize library;
 
+
 - (Queue *) initWithFirstItem: (QueueItem *)item {
     queue = [[NSMutableArray alloc] init];
+    
+    notifyCenter = [NSNotificationCenter defaultCenter];
     
     while(item != nil) {
         NSLog(@"next in queue is %@", item.song.name);
@@ -22,6 +27,8 @@
         
         item = item.next;
     }
+    
+    [notifyCenter postNotificationName: @"queueChange" object:nil];
     
     return self;
 }
@@ -33,7 +40,8 @@
         item.previous = [queue lastObject];
     }
     
-    [queue addObject: item];       
+    [queue addObject: item];    
+    [notifyCenter postNotificationName: @"queueChange" object:nil];
 }
 
 - (void) pushSongAsNext: (Song*)song {
@@ -44,6 +52,7 @@
     next.previous = item;
     
     [queue insertObject: item atIndex:0];
+    [notifyCenter postNotificationName: @"queueChange" object:nil];
 }
 
 - (Song *)pop {
@@ -55,7 +64,21 @@
     [queue removeObject: item];
     [library removeQueueItem: item];
     
+    [notifyCenter postNotificationName: @"queueChange" object:nil];
     return song;
 }
+
+// Get songs
+- (int)countQueue {    
+    return [queue count];
+}
+
+
+// Events
+
+- (void) onQueueChange: (id)object execute: (SEL)selector {
+    [notifyCenter addObserver: object selector: selector name:@"queueChange" object: nil];
+}
+
 
 @end

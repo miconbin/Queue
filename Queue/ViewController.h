@@ -21,5 +21,8 @@
 @property (unsafe_unretained, nonatomic) IBOutlet UIView *playerView;
 @property (unsafe_unretained, nonatomic) IBOutlet UITabBar *tabBar;
 @property (strong, nonatomic) IBOutlet UIView *mainView;
+@property (unsafe_unretained, nonatomic) IBOutlet UITabBarItem *queueTabbarItem;
+
+- (void)queueChanged;
 
 @end
