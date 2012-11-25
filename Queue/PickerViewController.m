@@ -149,6 +149,17 @@
     [queue pushSongAsNext: selected];
 }
 
+@synthesize tableView;
+
+- (void)disableScroll {
+    tableView.scrollEnabled = NO;
+}
+
+- (void)enableScroll {
+    tableView.scrollEnabled = YES;
+    
+}
+
 // searchBar
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {

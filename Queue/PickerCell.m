@@ -209,6 +209,13 @@
 		{
 			lastMovePoint = [touch locationInView:self];
             touchMoved = true;
+            
+            float diffx = lastMovePoint.x - startPoint.x;
+            float diffy = lastMovePoint.y - startPoint.y;
+            
+            if(diffx > 30 && (diffy < 10) && (diffy > -10)) {
+                [delegateView disableScroll];
+            }
 		}
 	}
 
@@ -232,9 +239,11 @@
         }
         
 	}
+    
+    [delegateView enableScroll];
 }
 
-- (void)touchTap {    
+- (void)touchTap {
     
     [self setSelection: !self.selected withAnimations: YES];
     

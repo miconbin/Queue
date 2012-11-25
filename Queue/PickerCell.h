@@ -15,6 +15,9 @@
 - (void)selectCell:(NSIndexPath *)indexPath;
 - (void)deselectCell:(NSIndexPath *)indexPath;
 - (void)swipeCell:(NSIndexPath *)indexPath onCell: (PickerCell *)cell;
+- (void)disableScroll;
+- (void)enableScroll;
+
 
 @end
 
