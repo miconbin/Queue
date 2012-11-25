@@ -236,6 +236,8 @@
 
 - (void)removeQueueItem: (QueueItem *)item {
     [managedObjectContext deleteObject: item];
+    
+    [self save];
 }
 
 @end
