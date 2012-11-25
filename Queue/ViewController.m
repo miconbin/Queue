@@ -18,6 +18,7 @@
 @synthesize picker;
 @synthesize libraryView;
 @synthesize playerView;
+@synthesize tabBar;
 
 - (void)viewDidLoad
 {
@@ -27,6 +28,23 @@
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    // show tab bar
+    // move to 411
+    
+    [UIView beginAnimations:nil context:NULL];
+    
+    [UIView setAnimationDuration:0.3];
+    
+    [UIView setAnimationCurve:UIViewAnimationCurveLinear];
+    
+    CGRect frame = tabBar.frame;
+    
+    frame.origin.y = 411;
+    
+    tabBar.frame = frame;
+    
+    [UIView commitAnimations];
 }
 
 - (void)viewDidUnload
@@ -35,6 +53,7 @@
     [self setPicker:nil];
     [self setLibraryView:nil];
     [self setPlayerView:nil];
+    [self setTabBar:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

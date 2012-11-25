@@ -19,5 +19,6 @@
 @property (strong, nonatomic) IBOutlet PickerViewController *picker;
 @property (unsafe_unretained, nonatomic) IBOutlet UITableView *libraryView;
 @property (unsafe_unretained, nonatomic) IBOutlet UIView *playerView;
+@property (unsafe_unretained, nonatomic) IBOutlet UITabBar *tabBar;
 
 @end
