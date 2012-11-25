@@ -32,5 +32,6 @@
 @property NSPredicate *predicadeForSongs;
 
 - (void) updateTable;
+- (void) updateSelectionOfVisibleCells;
 
 @end

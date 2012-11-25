@@ -65,6 +65,7 @@
     // Set queue instance
     queue = [library getQueue];
     
+    [queue onPop: self execute: @selector(updateSelectionOfVisibleCells)];
 }
 
 - (void)viewDidUnload
@@ -243,7 +244,17 @@
     }
     
 }
+- (void)updateSelectionOfVisibleCells {
+    NSArray *paths = [tableView indexPathsForVisibleRows];
+    
+    for (NSIndexPath *path in paths) {
+        PickerCell *cell = (PickerCell *)[tableView cellForRowAtIndexPath:path];
+        Song *song = [[songs objectAtIndex: path.section] objectAtIndex: path.row];
+        
+        [cell setSelection:song.queue_pos != nil withAnimations:YES];
+    }
 
+}
 // Hide keyboard
 
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {

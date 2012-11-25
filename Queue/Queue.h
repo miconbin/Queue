@@ -32,5 +32,6 @@
 - (void) kickSong: (Song *)song;
 
 - (void) onQueueChange: (id)object execute: (SEL)selector;
+- (void) onPop: (id)object execute: (SEL)selector;
 
 @end

@@ -65,6 +65,8 @@
     [library removeQueueItem: item];
     
     [notifyCenter postNotificationName: @"queueChange" object:nil];
+    [notifyCenter postNotificationName: @"songPop" object:nil];
+    
     return song;
 }
 
@@ -78,6 +80,10 @@
 
 - (void) onQueueChange: (id)object execute: (SEL)selector {
     [notifyCenter addObserver: object selector: selector name:@"queueChange" object: nil];
+}
+
+- (void) onPop: (id)object execute: (SEL)selector {
+    [notifyCenter addObserver: object selector: selector name:@"songPop" object: nil];
 }
 
 
