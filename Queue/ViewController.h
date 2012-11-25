@@ -20,5 +20,6 @@
 @property (unsafe_unretained, nonatomic) IBOutlet UITableView *libraryView;
 @property (unsafe_unretained, nonatomic) IBOutlet UIView *playerView;
 @property (unsafe_unretained, nonatomic) IBOutlet UITabBar *tabBar;
+@property (strong, nonatomic) IBOutlet UIView *mainView;
 
 @end

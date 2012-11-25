@@ -31,5 +31,6 @@
 
 @property NSPredicate *predicadeForSongs;
 
+- (void) updateTable;
 
 @end

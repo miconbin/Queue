@@ -19,6 +19,7 @@
 @synthesize libraryView;
 @synthesize playerView;
 @synthesize tabBar;
+@synthesize mainView;
 
 - (void)viewDidLoad
 {
@@ -29,22 +30,62 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    // show tab bar
-    // move to 411
     
-    [UIView beginAnimations:nil context:NULL];
+    // loading
     
-    [UIView setAnimationDuration:0.3];
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     
-    [UIView setAnimationCurve:UIViewAnimationCurveLinear];
+    spinner.center = CGPointMake(160, 320);
     
-    CGRect frame = tabBar.frame;
     
-    frame.origin.y = 411;
+    spinner.backgroundColor = [UIColor whiteColor];
+    spinner.hidesWhenStopped = YES;
+    spinner.backgroundColor = [[UIColor alloc] initWithRed:0.0 green:0.0 blue:0.0 alpha:0];
+    [spinner startAnimating];
     
-    tabBar.frame = frame;
+    UILabel *label;
     
-    [UIView commitAnimations];
+    
+    [mainView addSubview: spinner];
+    [mainView addSubview: label];
+    
+    NSLog(@"spinning...");
+    
+    [spinner startAnimating];
+    
+    [self performSelectorInBackground: @selector(sync:) withObject:spinner] ;
+    
+    NSLog(@"Done in didLoad");
+}
+
+- (void) sync: (UIActivityIndicatorView *)spinner {
+    @autoreleasepool {
+        NSLog(@"Begin sync");
+        
+        [self.library syncWithMusicLibrary];
+        
+        [spinner stopAnimating];
+        
+        // show tab bar
+        // move to 411
+        
+        [UIView beginAnimations:nil context:NULL];
+        
+        [UIView setAnimationDuration:0.3];
+        
+        [UIView setAnimationCurve:UIViewAnimationCurveLinear];
+        
+        CGRect frame = tabBar.frame;
+        
+        frame.origin.y = 411;
+        
+        tabBar.frame = frame;
+        
+        [UIView commitAnimations];
+        NSLog(@"done sync");
+        
+        [picker updateTable];
+    }
 }
 
 - (void)viewDidUnload
@@ -54,6 +95,7 @@
     [self setLibraryView:nil];
     [self setPlayerView:nil];
     [self setTabBar:nil];
+    [self setMainView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
