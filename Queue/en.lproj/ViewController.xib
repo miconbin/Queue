@@ -66,13 +66,13 @@
 								<string key="NSFrameSize">{320, 411}</string>
 								<reference key="NSSuperview" ref="587245003"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="516056194"/>
+								<reference key="NSNextKeyView" ref="149899226"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<object class="NSCustomResource" key="IBUIImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">queue-bg.png</string>
+									<string key="NSResourceName">queueBg.png</string>
 								</object>
 							</object>
 							<object class="IBUITableView" id="149899226">
@@ -81,17 +81,25 @@
 								<string key="NSFrameSize">{480, 592}</string>
 								<reference key="NSSuperview" ref="587245003"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="944769632"/>
+								<reference key="NSNextKeyView" ref="516056194"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<object class="NSColor" key="IBUIBackgroundColor">
-									<int key="NSColorSpace">3</int>
-									<bytes key="NSWhite">MSAwAA</bytes>
+									<int key="NSColorSpace">1</int>
+									<bytes key="NSRGB">MC44ODY1NDg5MTMgMCAwIDAAA</bytes>
 								</object>
 								<bool key="IBUIAutoresizesSubviews">NO</bool>
 								<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<bool key="IBUIBounces">NO</bool>
 								<int key="IBUIIndicatorStyle">1</int>
+								<int key="IBUISeparatorStyle">1</int>
+								<object class="NSColor" key="IBUISeparatorColor">
+									<int key="NSColorSpace">3</int>
+									<bytes key="NSWhite">MC43NSAwAA</bytes>
+									<object class="NSColorSpace" key="NSCustomColorSpace" id="742379014">
+										<int key="NSID">2</int>
+									</object>
+								</object>
 								<int key="IBUISectionIndexMinimumDisplayRowCount">0</int>
 								<bool key="IBUIShowsSelectionImmediatelyOnTouchBegin">YES</bool>
 								<float key="IBUIRowHeight">44</float>
@@ -102,14 +110,12 @@
 						<string key="NSFrameSize">{320, 411}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="149899226"/>
+						<reference key="NSNextKeyView" ref="944769632"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
-							<object class="NSColorSpace" key="NSCustomColorSpace" id="742379014">
-								<int key="NSID">2</int>
-							</object>
+							<reference key="NSCustomColorSpace" ref="742379014"/>
 						</object>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
@@ -514,7 +520,7 @@
 									<object class="IBUILabel" id="556911065">
 										<reference key="NSNextResponder" ref="615320906"/>
 										<int key="NSvFlags">292</int>
-										<string key="NSFrame">{{16, 5}, {288, 21}}</string>
+										<string key="NSFrame">{{16, 1}, {288, 21}}</string>
 										<reference key="NSSuperview" ref="615320906"/>
 										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="653282701"/>
@@ -995,9 +1001,9 @@
 							<reference ref="359260493"/>
 							<reference ref="653282701"/>
 							<reference ref="138745348"/>
-							<reference ref="556911065"/>
 							<reference ref="329827482"/>
 							<reference ref="737630505"/>
+							<reference ref="556911065"/>
 						</array>
 						<reference key="parent" ref="800045590"/>
 						<string key="objectName">Player</string>
@@ -1309,8 +1315,8 @@
 			<string key="library.png">{24, 22}</string>
 			<string key="main-bg.png">{320, 480}</string>
 			<string key="playNowTrachInfo.png">{320, 58}</string>
-			<string key="queue-bg.png">{320, 411}</string>
 			<string key="queue.png">{24, 22}</string>
+			<string key="queueBg.png">{320, 411}</string>
 			<string key="settings.png">{24, 24}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">1498</string>
