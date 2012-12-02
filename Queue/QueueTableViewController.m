@@ -27,6 +27,7 @@
     queue = _queue;
     
     [tableView reloadData];
+    tableView.scrollsToTop = NO;
     
     [queue onQueueChange:tableView execute:@selector(reloadData)];
 }
